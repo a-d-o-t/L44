@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Your Email With Local 44</title>
+	<meta name="generator" content="BBEdit 14.0" />
+	<meta name="robots" content="noindex">
+	<style>
+	p {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 200%;
+	}
+	
+	.btn {
+	font-size: 150%;
+	padding: 10px;
+	}
+	</style>
+	<script>
+function sendMail() {
+function getName() {
+var name = prompt("Enter your full (first + last) name:");
+if (name) {
+//document.write(name);
+return name; //<---not necessary???
+}
+else if (name === "") {
+alert("Field cannot be empty");
+var name = getName(); // <---var name otherwise does not pass var
+}
+else {
+return false;
+}
+return name;
+}
+function getTitle() {
+var title = prompt("Enter your job classification:");
+if (title != "") {
+//document.write(title);
+//return title; <---not necessary
+}
+else {
+alert("Field cannot be empty");
+var title = getTitle(); // <---var title otherwise does not pass var
+}
+return title;
+}
+//getName ();
+//getTitle ();
+var name = getName();
+if (name) {
+var title = getTitle();
+}
+else {
+return false;
+}
+if (!title) {
+return false;
+}
+//document.write(name);
+//document.write(title);
+if (name && title) {
+window.alert("An email to Local 44 will now be drafted from your default mail account. Make sure to press send!\n\nIf using Safari you must press \"Open\" when asked to open the page in Mail.");
+
+document.write("<br><p>");
+document.write("Email successfully drafted to Local 44 from " + name + ", " + title + ".");
+document.write("<br><br>");
+document.write("Be sure to press send!");
+document.write("<br><br><br>")
+document.write("Experiencing issues? Click below to try again:")
+document.write("<br><br><button class='btn' onclick=location.reload();>Try Again</button>");
+document.write("</p>");
+
+window.location.href = "mailto:Postmaster@Local44.org?cc=Callboard@Local44.org&subject=Please update my email address&body=Hello, please make sure I am receiving all emails from Local 44 to this address. Thank you! --" + name + ", " + title;
+
+}
+else {window.alert("Unknown error!!!");}
+}
+</script>
+</head>
+<body>
+<script>
+sendMail();
+</script>
+</body>
+</html>
